@@ -1,0 +1,168 @@
+*{
+    margin: 0;
+    padding: 0; 
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+img{
+    max-width: 100%;
+}
+li{
+    list-style: none;
+}
+
+.wrapper{
+    width: 100%;
+    margin: 0 auto;
+}
+
+.glryBox{
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+.glryBox ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.glryBox li{
+    width: 20%;
+    min-height: 500px;
+    margin: 25px 2%;
+    display: inline-block;
+}
+
+.glryBox li .imgBox{
+    width: 100%;
+}
+.glryBox li .imgBox img{
+    display: block;
+}
+.glryBox li .imgDtl{
+    width: 100%;
+    width: 100%;
+    background: #f1ebeb;
+    padding: 20px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.glryBox li .imgDtl h2{
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.glryBox li .imgDtl p{
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.glryBoxArw{
+    position: absolute;
+    top: 45%;
+    width: 100%;
+    z-index: 2;
+}
+.prevGlryArw,
+.nextGlryArw{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 5%;
+    border-radius: 100%;
+    background:rgba(255,255,255,0.8);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+}
+
+.nextGlryArw{
+    right: 5%;
+    left: auto;
+}
+.prevGlryArw::before,
+.nextGlryArw::before{
+    content: '>';
+    
+    font-size: 24px;
+}
+.prevGlryArw::before{
+    content: '<';
+}
+
+.prevGlryArw.disable,
+.nextGlryArw.disable{
+    cursor: default;
+    background: rgba(0,0,0,0.2);
+    color: #666;
+}
+
+
+.glryBigTrans{
+    background:rgba(0,0,0,0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 9;
+}
+.glryBigBox{
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    width: 80%;  
+    height: 90%;
+    margin-left: -40%;
+    min-height: 600px;               
+}
+.glryBigBox .glryimg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+}
+.glryBigBox .glryimg img{
+    transform: scale(0);
+    transition: all 0.3s ease ;
+    max-height: 100%;
+}
+.glryBigBox.anim .glryimg img{
+    transform: scale(1);
+}
+.glryBigBox .glryimg iframe{
+    width: 100%;
+    height: 100%;
+    border:none
+}
+.glryDtl{
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    transition: all 0.5s ease ;
+}
+.glryDtl h2{
+    font-size: 28px;
+}
+.glryDtl p{
+    padding-top: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+.glryBigBox.anim .glryDtl{
+    opacity: 1;
+}
+
+
+@media (max-width: 1400px) {
+    .glryBox li {
+        width: 25%;
+        margin: 25px 2%;
+    }
+}
